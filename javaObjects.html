@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>JavaScript Objects</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="styles.css" />
+    </head>
+    <body>
+        <h1>JavaScript Objects</h1>
+        <h2>Object creation.</h2>
+        <p id="creation"></p>
+
+        <script>
+            //Object will be created.
+            var people = {firstName: "Keith", lastName: "Downing", age: 38, eyeColor: "Blue"};
+
+            //Display information.
+            document.getElementById("creation").innerHTML =
+                    people.firstName + " is " + people.age + " years old " + " and " +
+                    " has " + people.eyeColor + " eyes. ";
+
+
+        </script>
+
+        <h1>Function</h1>
+        <p>Has the syntax of new Function ([arg1[, arg2[, ...argN]],] functionBody)</p>
+        <p id="function"></p>
+        <script>
+            var sum = new Function('a', 'b', 'return a + b');
+            document.getElementById("function").innerHTML = (sum(5, 10));
+            //Screen should display 15
+        </script>
+
+        <h1>Inheritance</h1>
+        <h2>Subclass and Superclass</h2>
+        <p>Subclass - (child), class that inherits from another class.</p>
+        <p>Superclass - (parent), class being inherited from.</p>
+
+
+        <p>class Vehicle {<br>
+            <br>protected String brand = "Toyota";       // Vehicle Attribute
+            <br>public void honk() {                     // Method
+            <br>System.out.println("Tuut, tuut!");
+            <br>}
+            <br>}
+
+            <br>class Car extends Vehicle {
+            <br>private String modelName = "Camry";          //Car Attribute
+            <br>public static void main(String[] args) {
+            <br>Car myFastCar = new Car();                 //New myFastCar object  
+            <br>myFastCar.honk();                          //Calls honk() method
+            <br>
+            <br>System.out.println(myFastCar.brand + " " + myFastCar.modelName);
+            <br>}
+            <br>}
+        </p>
+        <br>
+       
+
+        <h1>Properties</h1>
+        <h2>Values that are given to a JavaScript Object.</h2>
+        <p>In this example, var people will have a first name, last name, age, eye color, and mood.</p>
+        <p id="feelings"></p>
+        <script>
+            var people = {
+                firstName:"Keith",
+                lastName:"Downing",
+                age:38, 
+                eyeColor:"blue",
+                mood:"satisfied"};
+           document.getElementById("feelings").innerHTML = people.firstName + " " 
+                   + people.lastName 
+                   + " is " + people.age + " and has " + 
+                   people.eyeColor + " eyes and is feeling " 
+                   + people.mood + " " + "today.";         
+        </script>
+        
+        <h1>Method</h1>
+        <p>Using "this"</p>
+        <p>In this example, the function will call the completeName method.</p>
+        <p id="fullName"></p>
+        <script>
+            // Create an object:
+                var person = {
+                    firstName: "Keith",
+                    lastName : "Downing",
+                    age: 38,
+                completeName : function() {
+                return this.firstName + " " + this.lastName;
+  }
+};
+
+            // Display data from the object:
+                document.getElementById("fullName").innerHTML = person.completeName();
+            
+        </script>
+        
+        <h1>Instantiate</h1>
+        <img src="InstantiateExamples.png" alt="Instantiate">
+    </body>
+</html>
